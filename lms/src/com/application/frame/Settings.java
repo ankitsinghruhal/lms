@@ -7,18 +7,25 @@ import java.sql.DriverManager;
 
 public class Settings
 {
-    public static Dimension getScreenSize(){
+    public static Dimension getScreenSize()
+    {
         Dimension d=Toolkit.getDefaultToolkit().getScreenSize();
         return d;   
     }//getScreenSize() closed
     
-    public static Connection getDBConnection(){
+    public static Connection getDBConnection()
+    {
         Connection con;
-        try{
+        
+        try
+        {
             Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
             con=DriverManager.getConnection("jdbc:odbc:student");
             return con;
-        }catch(Exception ex){
+        }
+        
+        catch(Exception ex)
+        {
             return null;
         }
     }
